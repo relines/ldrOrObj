@@ -16,7 +16,7 @@ function App() {
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
       <CameraSetup />
-      <Suspense fallback={<span>加载中...</span>}>
+      <Suspense fallback={null}>
         <Model position={[0, 0, 0]} />
       </Suspense>
       <OrbitControls />

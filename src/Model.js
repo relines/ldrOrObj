@@ -10,7 +10,7 @@ export default function Model() {
 
   // 加载 OBJ 文件
   const obj = useLoader(OBJLoader, "/bom.obj", (loader) => {
-    // loader.setMaterials(materials); // 设置材质
+    loader.setMaterials(materials); // 设置材质
   });
 
   return <primitive object={obj} />;
