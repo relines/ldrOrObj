@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { OrbitControls } from "@react-three/drei"; // 可选，用于添加控制器
+import Model from "./Model";
+
+function CameraSetup() {
+  const { camera } = useThree();
+  camera.position.set(0, 0, 5); // 设置相机位置，调整 Z 值以获得合适的视角
+  camera.lookAt(0, 0, 0); // 确保相机朝向模型中心
+  return null;
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Canvas style={{ height: "100vh", backgroundColor: "#111a21" }}>
+      <ambientLight intensity={0.5} />
+      <directionalLight position={[10, 10, 5]} intensity={1} />
+      <CameraSetup />
+      <Suspense fallback={<span>加载中...</span>}>
+        <Model position={[0, 0, 0]} />
+      </Suspense>
+      <OrbitControls />
+    </Canvas>
   );
 }
 
