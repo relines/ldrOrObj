@@ -13,5 +13,5 @@ export default function Model() {
     loader.setMaterials(materials); // 设置材质
   });
 
-  return <primitive object={obj} />;
+  return <primitive object={obj} scale={[0.5, 0.5, 0.5]} />;
 }
