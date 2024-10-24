@@ -50,7 +50,6 @@ function App() {
 
   return (
     <div>
-      <Button onClick={handleScreen}>截图</Button>
       <Button onClick={exportViews}>截图</Button>
       <Canvas
         ref={canvasRef}
