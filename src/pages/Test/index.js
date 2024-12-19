@@ -50,7 +50,7 @@ function App() {
 
   return (
     <div>
-      <Button onClick={exportViews}>截图</Button>
+      <Button onClick={exportViews}>截取五视图</Button>
       <Canvas
         ref={canvasRef}
         width={1000}
